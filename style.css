@@ -1,0 +1,315 @@
+html > body {
+    font-family: "Open Sans",Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
+
+body.dark {
+    --startup-background: #181818;
+    --startup-background-rgb: 24,24,24;
+    --app-background: #0b0b0b;
+    --app-background-rgb: 11,11,11;
+    --app-background-deeper: #080808;
+    --app-background-deeper-rgb: 8,8,8;
+    --conversation-panel-background: #0b0b0b;
+    --conversation-panel-background-rgb: 11,11,11;
+    --system-message-background: #181818;
+    --system-message-background-rgb: 24,24,24;
+    --intro-background: #141414;
+    --intro-background-rgb: 20,20,20;
+    --background-document-with-captions: #111111;
+    --background-document-with-captions-rgb: 17,17,17;
+
+    /* bho */
+    --cart-interstitial-background: #3a3a3a;
+    --cart-interstitial-background-rgb: 58,58,58;
+    --chat-marker-background: #2a2a2a;
+    --chat-marker-background-rgb: 42,42,42;
+    --compose-panel-background: #202020;
+    --compose-panel-background-rgb: 32,32,3;
+    --compose-panel-background-hover: #12121;
+    --compose-panel-background-hover-rgb: 18,18,18;
+    --cover-image-background: #1f1f1f;
+    --cover-image-background-rgb: 31,31,31;
+    --media-editor-image-caption-input-background: #2b2b2b;
+    --media-editor-image-caption-input-background-rgb: 43,43,43;
+    --media-editor-video-caption-input-background: #2b2b2b;
+    --media-editor-video-caption-input-background-rgb: 43,43,43;
+    --media-editor-document-caption-input-background: #2b2b2b;
+    --media-editor-document-caption-input-background-rgb: 43,43,43;
+
+    /* polls */
+    --disabled-round-button-background-color: #545454;
+    --disabled-round-button-background-color-rgb: 84,84,84;
+    --poll-modal-background-color: #111111;
+    --poll-modal-background-color-rgb: 17,17,17;
+    --poll-modal-footer-background-color: #202020;
+    --poll-modal-footer-background-color-rgb: 32,32,32;
+
+    /* modal popups */
+    --modal-backdrop: rgba(11,11,11,0.85);
+    --modal-backdrop-rgb: 11,11,11;
+    --modal-backdrop-solid: #111111;
+    --modal-backdrop-solid-rgb: 17,17,17;
+    --modal-background: #3b3b3b;
+    --modal-background-rgb: 59,59,59;
+    --panel-background-deep: #0f0f0f;
+    --panel-background-deep-rgb: 15,15,15;
+    --panel-background-hover: #101010;
+    --panel-background-hover-rgb: 16,16,16;
+    --panel-background-lighter: #101010;
+    --panel-background-lighter-rgb: 16,16,16;
+
+    /* notifications */
+    --notification-biz-background: #181818;
+    --notification-biz-background-rgb: 24,24,24;
+    --notification-e2e-background: #181818;
+    --notification-e2e-background-rgb: 24,24,24;
+    --notification-non-e2e-background: #181818;
+    --notification-non-e2e-background-rgb: 24,24,24;
+    --toast-background: rgba(11,11,11,0.96);
+    --toast-background-rgb: 11,11,11;
+
+    /* galleries */
+    --drawer-gallery-background: #111111;
+    --drawer-gallery-background-rgb: 17,17,17;
+    --drawer-gallery-background-active: #0c0c0c;
+    --drawer-gallery-background-active-rgb: 12,12,12;
+    --drawer-gallery-background-hover: #0c0c0c;
+    --drawer-gallery-background-hover-rgb: 12,12,12;
+    
+    /* chat list */
+    --background-default: #121212;
+    --background-default-rgb: 18,18,18;
+    --background-default-active: #2a2a2a;
+    --background-default-active-rgb: 42,42,42;
+    --background-default-hover: #202020;
+    --background-default-hover-rgb: 32,32,32;
+
+    /* archived chats */
+    --archived-chat-marker-background: #2a2a2a;
+    --archived-chat-marker-background-rgb: 42,42,42;
+    --archived-chat-persistent-header-background: #2a2a2a;
+    --archived-chat-persistent-header-background-rgb: 42,42,42;
+        /* big icon */
+    --empty-state-background: #181818;
+    --empty-state-background-rgb: 24,24,24;
+    --empty-state-icon: #727272;
+    --empty-state-icon-rgb: 114,114,114;
+    
+    /* header bar */
+    --panel-header-background: #202020;
+    --panel-header-background-rgb: 32,32,32;
+    
+    /* search bar */
+    --search-input-background: #202020;
+    --search-input-background-rgb: 32,32,32;
+    --search-input-container-background: #181818;
+    --search-input-container-background-rgb: 24,24,24;
+    --search-input-container-background-active: #181818;
+    --search-input-container-background-active-rgb: 24,24,24;
+    
+    /* dropdown */
+    --dropdown-background: #2a2a2a;
+    --dropdown-background-rgb: 42,42,42;
+    --dropdown-background-hover: #3a3a3a;
+    --dropdown-background-hover-rgb: 58,58,58;
+    
+    /* general panels */
+    --panel-background-colored: #202020;
+    --panel-background-colored-rgb: 32,32,32;
+    --panel-background-colored-deeper: #191919;
+    --panel-background-colored-deeper-rgb: 25,25,25;
+    --drawer-background: #111111;
+    --drawer-background-rgb: 17,17,17;
+    --drawer-background-deep: #0c0c0c;
+    --drawer-background-deep-rgb: 12,12,12;
+    --drawer-section-background: #181818;
+    --drawer-section-background-rgb: 24,24,24;
+    --popup-panel-background: #191919;
+    --popup-panel-background-rgb: 25,25,25;
+    
+    /* audio background */
+    --ptt-ooc-background: #3b3b3b;
+    --ptt-ooc-background-rgb: 59,59,59;
+
+    --panel-background: #111111;
+    --panel-background-rgb: 17,17,17;
+    --panel-background-active: #111111;
+    --panel-background-active-rgb: 17,17,17;
+    /* input */
+    --panel-input-background: #222222;
+    --panel-input-background-rgb: 34,34,34;
+    --ptt-draft-waveform-background: #3b3b3b;
+    
+    /* sendMessage input bar */
+    --rich-text-panel-background: #111111;
+    --rich-text-panel-background-rgb: 17,17,17;
+    --compose-input-background: #2a2a2a;
+    --compose-input-background-rgb: 42,42,42;
+    --compose-input-background-focused: #333333;
+    --compose-input-background-focused-rgb: 51,51,51;
+    --compose-input-border: #2a2a2a;
+    --compose-input-border-rgb: 42,42,42;
+    --compose-input-border-focused: #353535;
+    --compose-input-border-focused-rgb: 53,53,53;
+    
+    /* in emoji panel */
+    --sticker-button-background: #262626;
+    --sticker-button-background-rgb: 38,38,38;
+    --panel-background-deeper: #181818;
+    --panel-background-deeper-rgb: 24,24,24;
+    --chat-info-drawer-thumb-background: #2a2a2a;
+    --chat-info-drawer-thumb-background-rgb: 42,42,42;
+    --media-gallery-thumb-background: #2a2a2a;
+    --media-gallery-thumb-background-rgb: 42,42,42;
+    
+    --progress-background: #232323;
+    --progress-background-rgb: 35,35,35;
+
+    /* reactions */
+    --reactions-tray-background: #181818;
+    --reactions-picker-bg: #666666;
+    
+    --reactions-details-background: #222222;
+    --reactions-details-background-rgb: 34,34,34;
+    --reactions-details-background-hover: #2c2c2c;
+    --reactions-details-background-hover-rgb: 44,59,69;
+    --reactions-tray-active-round-background: #3b4a54;
+    --reactions-tray-active-round-background-rgb: 59,74,84;
+
+    --reactions-panel-background-color: #222222;
+    --reactions-panel-background-color-rgb: 34,34,34;
+    
+    /* chat */
+    --incoming-background: #202020;
+    --incoming-background-rgb: 32,32,32;
+    --incoming-background-deeper: #1d1d1d;
+    --incoming-background-deeper-rgb: 29,29,29;
+    
+    --unread-background: #121212;
+    --unread-background-rgb: 18,18,18;
+    --unread-bar-background: rgb(32 32 32 / 60%);
+    --unread-bar-background-rgb: 32,32,32;
+    
+    --media-viewer-background: rgba(17,17,17,0.98);
+    --media-viewer-background-rgb: 17,17,17;
+    
+    /* status */
+    --status-background: #0b0b0b;
+    --status-background-rgb: 11,11,11;
+    --status-background-hover: #2c2c2c;
+    --status-background-hover-rgb: 44,44,44;
+}
+
+/* popup emoji selector */
+._2sDI2._22C8J._3byvy {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* rounded chat list */
+div[data-testid="chat-list"] {
+    padding: 0.25rem;
+}
+div[data-testid="chat-list"] > div > div > div > div > div {
+    border-radius: 0.5rem;
+}
+div[data-testid="chat-list"] > div > div > div > div > div > div {
+    border: 0!important;
+}
+div[data-testid="chat-list"] > div > div > div > div > div::after {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+}
+
+/* remove side border */
+.zaKsw,
+._23P3O,
+._5kRIK,
+._2lSWV {
+    border-left: 0!important;
+}
+
+/* chatlist header */
+header[data-testid="chatlist-header"] {
+    border-bottom-right-radius: 1.25rem;
+    box-shadow: #2a2a2a00 1px 0;
+    transition: 0.2s;
+}
+header[data-testid="chatlist-header"].filled {
+    border-bottom-right-radius: 0;
+    box-shadow: #2a2a2aff 1px 0;
+}
+/* what's behind chatlist header */
+#app > div > div > div._2Ts6i._3RGKj {
+    background: #141414;
+}
+
+/* dynamic search bar */
+#side {
+    background: var(--background-default);
+    position: relative;
+}
+    /* chat list */
+#pane-side {
+    position: absolute;
+    inset: 0;
+    transition: 0.25s;
+}
+#side.search #pane-side {
+    top: 3rem;
+}
+    /* search bar */
+#side > div:not(#pane-side) {
+    transform: translateY(-100%);
+    opacity: 0;
+    border-radius: 0 1.5rem 0 0;
+    overflow: hidden;
+    transition: 0.25s;
+}
+#side.search > div:not(#pane-side) {
+    transform: translateY(0);
+    opacity: 1;
+}
+#side.chat > div:not(#pane-side) {
+    border-radius: 0 0rem 0 0;
+}
+
+@media screen and (min-width: 1441px) {
+    #app > div > div {
+        border-radius: 1rem;
+        --intro-border: #141414;
+    }
+}
+
+/* bg di fortuna */
+div[data-testit="drawer-right"],
+div[data-list-scroll-container] {
+    background-color: #181818!important;
+}
+
+
+/* custom stuff */
+.material-symbols-rounded.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* reduces margin between buttons */
+html[dir=ltr] ._3OtEr {
+    margin-left: 8px;
+}
+/* buttons holder */
+#app div._3OtEr {
+    transition: 0.15s;
+}
+#app div._3OtEr.hidden {
+    opacity: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
