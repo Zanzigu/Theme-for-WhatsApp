@@ -12,7 +12,7 @@ var btnSearch = `<div class="_3OtEr" data-testid="menu-bar-search">
         </span>
     </div>
 </div>`;
-var btnHolder, divSide, chatListHeader;
+var btnHolder, divSide, chatListHeader, app;
 
 
 // google icons and font
@@ -32,6 +32,7 @@ window.onload = async e => {
     do { await new Promise (resolve => {
         setTimeout(() => {
 
+            app = document.getElementById('app');
             side = document.getElementById('side');
             chatListHeader = document.querySelector("#app > div > div > div._2Ts6i._3RGKj > header");
             btnHolder = document.querySelector("#app > div > div > div._2Ts6i._3RGKj > header > div._604FD > div > span");
@@ -93,6 +94,7 @@ window.onload = async e => {
         btnSearch.classList.toggle('_2Qn52');
     }
 
+    checkUpdates();
 }
 
 function checkOpenChat() {
@@ -114,4 +116,73 @@ function stringToNode(string) {
     let tempNode = document.createElement('div');
     tempNode.innerHTML = string.trim();
     return tempNode.firstChild;
+}
+
+async function checkUpdates() {
+    let updateURL = "https://raw.githubusercontent.com/Zanzigu/themeForUozapp/main/latestStable.json";
+    let response = await fetch(updateURL);
+    let data = await response.json();
+
+    var manifestData = chrome.runtime.getManifest();
+    if (manifestData.version < data.version) {
+        // suggest update
+        let popup = new Popup("Update found!", "Would you like to update?", [
+            {
+                "text": "Ok",
+                "type": "filled",
+                "event": e => {
+                    window.open(data.link, "_blank");
+                }
+            },
+            {
+                "text": "Ignore",
+                "type": "outlined",
+                "event": e => {
+                    popup.dismiss();
+                }
+            }
+        ]);
+    }
+}
+
+// popup management
+const _popup = `<div class="popup hidden"><div wrapper></div><div></div></div>`;
+const _popupBtnContainer = `<div class="btnContainer"></div>`;
+const _popupBtn = `<div class="button"></div>`;
+// buttons: [{"text": "", "type": "", "event": e}, ...]
+// button types: filled, outlined, text
+class Popup {
+    #popup = null;
+
+    constructor(text, descriprtion, buttons) {
+        app.appendChild(stringToNode(_popup));
+        this.#popup = app.lastChild;
+        let popup = this.#popup.lastChild;
+
+        this.#popup.firstChild.onclick = _ => this.dismiss();
+
+        popup.appendChild(stringToNode(`<h1>${text}</h1>`));
+        popup.appendChild(stringToNode(`<p>${descriprtion}</p>`));
+
+        popup.appendChild(stringToNode(_popupBtnContainer));
+        let btnContainer = popup.lastChild;
+        for (let i = 0; i < buttons.length; i++) {
+            const button = buttons[i];
+            btnContainer.appendChild(stringToNode(_popupBtn));
+            btnContainer.lastChild.classList.add(button.type);
+            btnContainer.lastChild.innerHTML = button.text;
+            btnContainer.lastChild.onclick = button.event;
+        }
+
+        setTimeout(() => {
+            this.#popup.classList.remove('hidden');
+        }, 500);
+    }
+
+    dismiss = () => {
+        this.#popup.classList.add('hidden');
+        setTimeout(() => {
+            this.#popup.remove();
+        }, 500);
+    };
 }

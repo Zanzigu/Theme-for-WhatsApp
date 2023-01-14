@@ -313,3 +313,78 @@ html[dir=ltr] ._3OtEr {
     transform: translateY(-50%);
     pointer-events: none;
 }
+
+/* popup */
+.popup {
+    z-index: 9999;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: 0.15s;
+}
+.popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.popup *[wrapper] {
+    position: absolute;
+    inset: 0;
+    background-color: #00000088;
+    z-index: -1;
+}
+
+.popup > div {
+    background: #2a2a2a;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    min-width: 50%;
+}
+.popup h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.popup p {
+    color: #bababa;
+    margin-bottom: 1rem;
+}
+
+.popup .btnContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1rem;
+}
+.popup .button {
+    padding: 0.5rem;
+    min-width: 3.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-weight: 900;
+    background: var(--icon-bright-accent);
+    color: #2a2a2a;
+}
+.popup .button.outlined {
+    background: transparent;
+    color: var(--label-secondary-text);
+    font-weight: 400;
+    box-shadow: inset var(--menu-context-sticker-icon) 0 0 0 2px;
+}
+.popuip .button.text {
+    background: transparent;
+    color: var(--icon-bright-accent);
+    font-weight: 400;
+    text-decoration: underline;
+}
