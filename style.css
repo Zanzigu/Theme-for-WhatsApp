@@ -18,6 +18,10 @@ body.dark {
     --background-document-with-captions: #111111;
     --background-document-with-captions-rgb: 17,17,17;
 
+    /* update whatsapp panel */
+    --butterbar-update-background: #181818;
+    --butterbar-update-background-rgb: 24,24,24;
+
     /* bho */
     --cart-interstitial-background: #3a3a3a;
     --cart-interstitial-background-rgb: 58,58,58;
