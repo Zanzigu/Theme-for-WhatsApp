@@ -12,7 +12,7 @@ var btnSearch = `<div class="_3OtEr" data-testid="menu-bar-search">
         </span>
     </div>
 </div>`;
-var btnHolder, divSide, chatListHeader, app;
+var btnHolder, divSide, chatListHeader, app, chatSearchBox;
 
 
 // google icons and font
@@ -34,8 +34,9 @@ window.onload = async e => {
 
             app = document.getElementById('app');
             side = document.getElementById('side');
-            chatListHeader = document.querySelector("#app > div > div > div._2Ts6i._3RGKj > header");
-            btnHolder = document.querySelector("#app > div > div > div._2Ts6i._3RGKj > header > div._604FD > div > span");
+            chatListHeader = document.querySelector("header[data-testid='chatlist-header']");
+            btnHolder = document.querySelector("header[data-testid='chatlist-header'] > div._604FD > div > span");
+            chatSearchBox = document.querySelector("div[data-testid='chat-list-search']");
             resolve();
 
         }, 2000);
@@ -50,23 +51,7 @@ window.onload = async e => {
     btnCloseChat = btnHolder.firstChild;
     btnCloseChat.onclick = e => {
         // send key event ESC
-        document.dispatchEvent(new KeyboardEvent(
-            "keydown",
-            {
-                altKey: false,
-                code: "Escape",
-                ctrlKey: false,
-                isComposing: false,
-                key: "Escape",
-                location: 0,
-                metaKey: false,
-                repeat: false,
-                shiftKey: false,
-                which: 27,
-                charCode: 0,
-                keyCode: 27,
-            })
-        );
+        document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape"}));
 
         setTimeout(() => {
             checkOpenChat();
@@ -74,23 +59,30 @@ window.onload = async e => {
     }
 
     // Open/Close chat event listener
-    side.onmousedown = e => {
+    sideChatListener = e => {
         setTimeout(() => {
             checkOpenChat();
-        }, 10);
+        }, 100);
     }
-
-    window.onkeydown = e => {
-        setTimeout(() => {
-            checkOpenChat();
-        }, 10);
-    }
+    side.onmousedown = sideChatListener;
+    window.onkeydown = sideChatListener;
 
     // add search button
     btnHolder.insertBefore(stringToNode(btnSearch), btnHolder.lastChild);
     btnSearch = btnHolder.childNodes[ btnHolder.childNodes.length - 2 ];
     btnSearch.onclick = e => {
+        // Deactivate unread filtering
+        if (document.querySelector("button.tt8xd2xn > div.evq4wxsl"))
+            document.querySelector("button.tt8xd2xn").click();
+        
+        // clear inputBox
+        setTimeout(() => {
+            chatSearchBox.dispatchEvent(new KeyboardEvent("keydown", {keyCode: 27}));
+        }, 20);
+
+        // hides bar
         document.querySelector("#side").classList.toggle('search');
+        // btn higlighting
         btnSearch.classList.toggle('_2Qn52');
     }
 
