@@ -111,7 +111,7 @@ function stringToNode(string) {
 }
 
 async function checkUpdates() {
-    let updateURL = "https://raw.githubusercontent.com/Zanzigu/themeForUozapp/main/latestStable.json";
+    let updateURL = "https://raw.githubusercontent.com/Zanzigu/Theme-for-WhatsApp/main/latestStable.json";
     let response = await fetch(updateURL);
     let data = await response.json();
 
