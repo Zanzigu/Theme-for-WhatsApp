@@ -1,12 +1,12 @@
-var btnCloseChat = `<div class="_3OtEr hidden" data-testid="menu-bar-close-chat">
-    <div aria-disabled="false" role="button" tabindex="0" class="_3ndVb" data-tab="2" title="Chiudi chat" aria-label="Chiudi chat">
+var btnCloseChat = `<div class="_3OtEr hidden">
+    <div aria-disabled="false" style="padding: 8px;" role="button" tabindex="0" class="_3ndVb" data-tab="2" title="Chiudi chat" aria-label="Chiudi chat">
         <span class="material-symbols-rounded icon">
             comments_disabled
         </span>
     </div>
 </div>`;
-var btnSearch = `<div class="_3OtEr" data-testid="menu-bar-search">
-    <div aria-disabled="false" role="button" tabindex="0" class="_3ndVb" data-tab="2" title="Cerca" aria-label="Cerca">
+var btnSearch = `<div class="_3OtEr">
+    <div aria-disabled="false" style="padding: 8px;" role="button" tabindex="0" class="_3ndVb" data-tab="2" title="Cerca" aria-label="Cerca">
         <span class="material-symbols-rounded icon">
             search
         </span>
@@ -34,9 +34,9 @@ window.onload = async e => {
 
             app = document.getElementById('app');
             side = document.getElementById('side');
-            chatListHeader = document.querySelector("header[data-testid='chatlist-header']");
-            btnHolder = document.querySelector("header[data-testid='chatlist-header'] > div._604FD > div > span");
-            chatSearchBox = document.querySelector("div[data-testid='chat-list-search']");
+            chatListHeader = document.querySelector("#app > div > div > div._2Ts6i._3RGKj > header");
+            btnHolder = document.querySelector("#app header > div._604FD > div > span");
+            chatSearchBox = document.querySelector("#side div.to2l77zo.gfz4du6o.ag5g9lrv.bze30y65.kao4egtt.qh0vvdkp");
             resolve();
 
         }, 2000);

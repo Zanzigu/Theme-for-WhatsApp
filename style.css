@@ -237,12 +237,12 @@ div[data-testid="chat-list"] > div > div > div > div > div::after {
 }
 
 /* chatlist header */
-header[data-testid="chatlist-header"] {
+#app > div > div > div._2Ts6i._3RGKj > header {
     border-bottom-right-radius: 1.25rem;
     box-shadow: #2a2a2a00 1px 0;
     transition: 0.2s;
 }
-header[data-testid="chatlist-header"].filled {
+#app > div > div > div._2Ts6i._3RGKj > header.filled {
     border-bottom-right-radius: 0;
     box-shadow: #2a2a2aff 1px 0;
 }
